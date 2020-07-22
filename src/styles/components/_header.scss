@@ -1,7 +1,7 @@
 .header {
   background: #20222b;
   color: white;
-  // margin-bottom: 4.8rem;
+  margin-bottom: 4.8rem;
   padding: 1.6rem 0;
   text-align: center;
 }
@@ -15,16 +15,20 @@
 .avatar {
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+  padding: $s-size;
 }
 
 .card {
   display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
+  padding: $m-size;
+  flex-direction: row;
 }
 
 .add-input {
   flex-grow: 1;
+  margin: 0 0 $s-size 0;
+  padding: $s-size;
 }
 
 .add-user {

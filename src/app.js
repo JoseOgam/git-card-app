@@ -38,7 +38,9 @@ class App extends React.Component {
     };
     return (
       <div>
-        <h1 className="header">Github Card Title</h1>
+        <div className="header">
+          <h1>Github Card Title</h1>
+        </div>
         <div className="container">
           <Form onSubmit={addProfile} />
           <CardList profiles={this.state.profiles} />
@@ -61,9 +63,9 @@ class Card extends React.Component {
   render() {
     const profile = this.props;
     return (
-      <div>
+      <div className="card">
         <img className="avatar" src={profile.avatar_url} alt="profile" />
-        <p>{profile.name}</p>
+        <p>{profile.name},</p>
         <p>{profile.company}</p>
       </div>
     );
@@ -90,16 +92,18 @@ class Form extends React.Component {
     return (
       <div>
         <form>
-          {
-            <input
-              placeholder="enter github username"
-              required
-              type="text"
-              value={this.state.userName}
-              onChange={(e) => this.setState({ userName: e.target.value })}
-            />
-          }
-          <button onClick={handleSubmit}>add card</button>
+          <input
+            className="add-input"
+            placeholder="enter github username"
+            required
+            type="text"
+            value={this.state.userName}
+            onChange={(e) => this.setState({ userName: e.target.value })}
+          />
+
+          <button className="button" onClick={handleSubmit}>
+            search
+          </button>
         </form>
       </div>
     );
